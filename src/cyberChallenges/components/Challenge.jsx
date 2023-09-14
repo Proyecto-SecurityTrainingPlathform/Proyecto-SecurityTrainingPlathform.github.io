@@ -17,6 +17,10 @@ export const Challenge = ({ title, platform, level, category, description, flag}
     setShowDescription(!showDescription);
   };
 
+  const handleCheckboxChange = () => {
+    setCompleted(!completed);
+  }
+
   /*
   const handleCheckboxChange = async () => {
   try {
@@ -66,7 +70,7 @@ export const Challenge = ({ title, platform, level, category, description, flag}
             <input className='checkbox-completed'
               type="checkbox"
               checked={completed}
-              /* onChange={handleCheckboxChange} */
+              onChange={handleCheckboxChange}
             />
           </label>
         </div>
