@@ -2,9 +2,9 @@ import '../../cyberChallenges/styles/challenge.css'
 import axios from 'axios';
 import React, { useState } from 'react';
 
-export const Challenge = ({ title, platform, level, category, details, flag}) => {
+export const Challenge = ({ title, platform, level, category, description, flag}) => {
 
-  const [showDetails, setShowDetails] = useState(false);
+  const [showDescription, setShowDescription] = useState(false);
   const [completed, setCompleted] = useState(false);
 
   // Por ahora lo voy a dejar así sin hacer la llamada al API porque no tengo el archivo.
@@ -13,8 +13,8 @@ export const Challenge = ({ title, platform, level, category, details, flag}) =>
     console.log('Descargando archivo del reto');
   };
 
-  const handleToggleDetails = () => {
-    setShowDetails(!showDetails);
+  const handleToggleDescription = () => {
+    setShowDescription(!showDescription);
   };
 
   /*
@@ -45,9 +45,9 @@ export const Challenge = ({ title, platform, level, category, details, flag}) =>
           <img
             width="25"
             height="20"
-            src={showDetails ? "./arrowUp.png" : "./arrowDown.png"}
-            alt={showDetails ? "up" : "down"}
-            onClick={handleToggleDetails}
+            src={showDescription ? "./arrowUp.png" : "./arrowDown.png"}
+            alt={showDescription ? "up" : "down"}
+            onClick={handleToggleDescription}
             style={{ cursor: "pointer" }}
           />
         </div>
@@ -73,10 +73,10 @@ export const Challenge = ({ title, platform, level, category, details, flag}) =>
         <a href="" onClick={handleDownload}> Download </a>
       </div>
       <div style={{ borderBottom: '1px solid #c7c8ca', marginBottom: '20px' }}></div>
-      {showDetails && (
-        <div className="chall-details">
-          <p> Challenge Details: </p>
-          <p> {details} </p>
+      {showDescription && (
+        <div className='div-chall-description'>
+          <p> Challenge Description: </p>
+          <p> {description} </p>
         </div>
       )}
     </header>

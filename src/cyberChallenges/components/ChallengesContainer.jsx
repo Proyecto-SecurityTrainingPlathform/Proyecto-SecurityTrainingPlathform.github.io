@@ -13,7 +13,7 @@ export const ChallengesContainer = (props) => {
                     platform={challenge.platform}
                     level={challenge.level}
                     category={challenge.category}
-                    details={challenge.details}
+                    description={challenge.description}
                     flag={challenge.flag}
                 />
             ))}
